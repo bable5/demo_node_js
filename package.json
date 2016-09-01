@@ -1,0 +1,15 @@
+{
+  "name": "docker-node-server",
+  "version": "1.0.0",
+  "description": "Test node/docker app",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "docker",
+    "example"
+  ],
+  "author": "Sean L. Mooney",
+  "license": "MIT"
+}
