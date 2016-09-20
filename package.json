@@ -4,6 +4,7 @@
   "description": "Test node/docker app",
   "main": "src/index.js",
   "scripts": {
+    "start": "node src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -11,5 +12,9 @@
     "example"
   ],
   "author": "Sean L. Mooney",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }
+
