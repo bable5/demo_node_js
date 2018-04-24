@@ -1,14 +1,24 @@
-FROM node:4.1.2
+FROM node:8.11.1-alpine as builder
 
+WORKDIR /build
+COPY ./ ./
+
+RUN npm install --production
+# Simulate some build step by copying src to lib.
+# This step might include babeling and webpacking files.
+RUN npm run dist
+
+FROM node:8.11.1
+
+# Create a group and user to isolate the running process
 RUN groupadd -r app && useradd -r -g app app && \
     mkdir -p /app
 WORKDIR /app
 
-COPY ./package.json /app
-COPY ./node_modules /app/node_modules
-COPY ./src /app/src
+COPY --from=builder /build/package.json /app
+COPY --from=builder /build/node_modules /app/node_modules
+COPY --from=builder /build/lib /app/lib
 RUN chown -R app:app /app
 EXPOSE 8080
 
 CMD ["npm", "start"]
-

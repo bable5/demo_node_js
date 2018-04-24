@@ -2,9 +2,9 @@
   "name": "docker-node-server",
   "version": "1.0.0",
   "description": "Test node/docker app",
-  "main": "src/index.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "node lib/server.js",
+    "dist": "cp -r src lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,4 +17,3 @@
     "express": "^4.13.3"
   }
 }
-

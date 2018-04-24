@@ -2,10 +2,10 @@
 
 
 docker run \
+    --rm \
     -e "NODE_ENV=production" \
     -d \
     -u "app" \
-    -m "300M" --memory-swap "1G" \
     -p 9020:8080 \
     bable5/demo_node_js:latest
 
