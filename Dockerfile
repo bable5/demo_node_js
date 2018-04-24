@@ -8,10 +8,10 @@ RUN npm install --production
 # This step might include babeling and webpacking files.
 RUN npm run dist
 
-FROM node:8.11.1
+FROM node:8.11.1-alpine
 
 # Create a group and user to isolate the running process
-RUN groupadd -r app && useradd -r -g app app && \
+RUN addgroup -S app && adduser -S -G app app && \
     mkdir -p /app
 WORKDIR /app
 
