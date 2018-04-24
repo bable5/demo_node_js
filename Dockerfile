@@ -1,7 +1,7 @@
 FROM node:8.11.1-alpine as builder
 
 WORKDIR /build
-COPY ./ ./
+COPY ./ /build
 
 RUN npm install --production
 # Simulate some build step by copying src to lib.
